@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: ExecuteCypressFromGithubActions
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-16.04
+    name: E2E Tests
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: false
+          spec: cypress/integration/newtestcases/testframework.js
+        
