@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-01-11T07:08:29.605Z",
+    "end": "2021-01-11T07:09:00.139Z",
+    "duration": 30534,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "49388b60-f255-4dcd-adbf-135ed7223ba0",
+      "title": "",
+      "fullFile": "cypress\\integration\\newtestcases\\automationpractice.js",
+      "file": "cypress\\integration\\newtestcases\\automationpractice.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3b053901-f107-4d66-90ce-bd967c7009df",
+          "title": "testing webtables",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "web table checking",
+              "fullTitle": "testing webtables web table checking",
+              "timedOut": null,
+              "duration": 9421,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://testautomationpractice.blogspot.com/');\ncy.get('table[name=\\'BookTable\\']').should('be.visible');\ncy.get(\"table[name='BookTable']>tbody>tr\").eq(1).find('td').each(function ($el, index, $list) {\n  cy.log($el.text());\n});\ncy.get(\"table[name='BookTable']>tbody>tr\").eq(3).within(function () {\n  cy.get('td').each(function ($ele, index, $listt) {\n    cy.log($ele.text());\n  });\n}); // cy.get(\"table[name='BookTable']\").contains('Amit').parent('tr').eq(1).each(($element,index,$list))",
+              "err": {},
+              "uuid": "ddb4a501-306a-4921-bf1e-7a00726e0716",
+              "parentUUID": "3b053901-f107-4d66-90ce-bd967c7009df",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "using within ",
+              "fullTitle": "testing webtables using within ",
+              "timedOut": null,
+              "duration": 16288,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://testautomationpractice.blogspot.com/');\ncy.get(\"table[name='BookTable']>tbody>tr\").eq(2).within(function () {\n  cy.get('td').eq(1).contains('Selenium');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 9000ms: Expected to find content: 'Selenium' within the element: <td> but never did.",
+                "estack": "AssertionError: Timed out retrying after 9000ms: Expected to find content: 'Selenium' within the element: <td> but never did.\n    at Context.eval (http://testautomationpractice.blogspot.com/__cypress/tests?p=cypress\\integration\\newtestcases\\automationpractice.js:115:26)",
+                "diff": null
+              },
+              "uuid": "82eed9b9-c1d9-42d5-a61b-169270038320",
+              "parentUUID": "3b053901-f107-4d66-90ce-bd967c7009df",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ddb4a501-306a-4921-bf1e-7a00726e0716"
+          ],
+          "failures": [
+            "82eed9b9-c1d9-42d5-a61b-169270038320"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 25709,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

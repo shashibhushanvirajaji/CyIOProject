@@ -1,0 +1,27 @@
+{
+  "name": "cypressautomation",
+  "version": "1.0.0",
+  "description": "learning cypress io",
+  "main": "index.js",
+  "scripts": {
+    "test": ".\\node_modules\\.bin\\cypress run --spec .\\cypress\\integration\\newtestcases\\*.*",
+    "merge": "mochawesome-merge cypress/results/*.json>cypress/results/output.json",
+    "frameworkTest": "npm run test -- --spec .\\cypress\\integration\\mytests\\framework.js",
+    "frameworkTestHeaded": "npm run frameworkTest -- --headed",
+    "ReportResultsToDashboard": "npm run test -- --record --key 3c3be489-33e0-4fb3-b044-abcb3989731b --spec .\\cypress\\integration\\mytests\\framework.js"
+  },
+  "author": "shashi bhushan virajaji",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^6.3.0",
+    "cypress-iframe": "^1.0.1",
+    "cypress-xpath": "^1.6.0",
+    "mochawesome": "^6.1.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.1.0"
+  },
+  "dependencies": {
+    "convert-csv-to-json": "^1.0.0",
+    "csvtojson": "^2.0.10"
+  }
+}

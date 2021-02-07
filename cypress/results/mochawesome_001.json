@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-01-11T07:09:28.976Z",
+    "end": "2021-01-11T07:09:41.309Z",
+    "duration": 12333,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e3d16288-b5ea-460b-986e-d9fc780e6c92",
+      "title": "",
+      "fullFile": "cypress\\integration\\newtestcases\\tricentis.js",
+      "file": "cypress\\integration\\newtestcases\\tricentis.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1661c906-6971-4684-8f56-fa2054f23444",
+          "title": "testing home page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "validate error message for wrong credentials",
+              "fullTitle": "testing home page validate error message for wrong credentials",
+              "timedOut": null,
+              "duration": 8194,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#Email').type('shashi.virajaji@gmail.com');\ncy.get('#Email').should('have.value', 'shashi.virajaji@gmail.com');\ncy.get('#Password').type('Shashi@12');\ncy.get('form > .buttons > .button-1').should('be.enabled');\ncy.get('form > .buttons > .button-1').click();\ncy.get('.validation-summary-errors').should('be.visible');\ncy.get('.validation-summary-errors').then(function ($element) {\n  var errormessage = $element.text();\n  if (errormessage.includes('unsucessful')) {\n    cy.log('expected message displayed');\n  }\n});\ncy.get('#RememberMe').click().should('be.checked');",
+              "err": {},
+              "uuid": "f7fa5365-2882-4889-b1d9-19c819d95711",
+              "parentUUID": "1661c906-6971-4684-8f56-fa2054f23444",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "validating top menu links",
+              "fullTitle": "testing home page validating top menu links",
+              "timedOut": null,
+              "duration": 213,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('div.header-menu>ul.top-menu>li').should('have.length', 7);\ncy.get('.inactive').each(function ($element, index, $list) {\n  cy.log($element.text());\n});",
+              "err": {},
+              "uuid": "b048681c-f84d-4d9c-88b6-5a75be77b288",
+              "parentUUID": "1661c906-6971-4684-8f56-fa2054f23444",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f7fa5365-2882-4889-b1d9-19c819d95711",
+            "b048681c-f84d-4d9c-88b6-5a75be77b288"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8407,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

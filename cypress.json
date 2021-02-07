@@ -1,0 +1,17 @@
+{
+  "defaultCommandTimeout": 9000,
+  "projectId": "fj73s3",
+  "retries": 0,
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/results",    
+    "overwrite": false,
+    "html": true,
+    "json": true
+  },
+  "env":{
+    "tricentisenv":"http://demowebshop.tricentis.com/"
+  },
+  "viewportHeight":1024,
+  "viewportWidth":1480
+}
