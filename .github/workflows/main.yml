@@ -21,7 +21,10 @@ jobs:
         with:
           browser: chrome         
           spec: cypress/integration/newtestcases/testframework.js
-          record: true        
+          record: true 
+        env: 
+          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Uploading screenshots
         uses: actions/upload-artifact@v1
         if: failure()
@@ -34,6 +37,4 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
-        env: 
-          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
