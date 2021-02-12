@@ -11,6 +11,10 @@ jobs:
   cypress-run:
     runs-on: ubuntu-16.04
     name: E2E Tests
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2]
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -20,8 +24,10 @@ jobs:
         uses: cypress-io/github-action@v2    
         with:
           browser: chrome         
-          spec: cypress/integration/newtestcases/testframework.js
+          spec: cypress/integration/newtestcases/**/*
           record: true 
+          parallel: true
+          group: 'Actions example'
         env: 
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
